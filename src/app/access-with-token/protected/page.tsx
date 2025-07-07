@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 const Page = () => {
   return (
     <div className="flex flex-col justify-center items-center h-screen gap-2">

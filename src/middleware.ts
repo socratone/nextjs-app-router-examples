@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
+import { AUTH_TOKEN } from './app/access-with-token/constants';
 
 export function middleware(request: NextRequest) {
   const { pathname, searchParams } = request.nextUrl;
@@ -25,28 +26,19 @@ export function middleware(request: NextRequest) {
       );
 
       // 응답에 쿠키를 설정합니다.
-      response.cookies.set('authToken', token, {
+      response.cookies.set(AUTH_TOKEN, token, {
         path: '/',
-        httpOnly: true,
-        secure: true,
+        httpOnly: false,
+        secure: false,
         sameSite: 'lax',
       });
 
       return response;
+    } else {
+      return NextResponse.redirect(new URL('/access-with-token', request.url));
     }
   }
 
-  if (pathname === '/access-with-token/protected') {
-    const token = request.cookies.get('authToken');
-    if (!token) {
-      // 인증되지 않은 사용자는 인증 페이지로 리디렉션됩니다.
-      return NextResponse.redirect(
-        new URL(`/access-with-token/form?redirect=${pathname}`, request.url)
-      );
-    }
-  }
-
-  // 다른 모든 요청은 그대로 통과시킵니다.
   return NextResponse.next();
 }
 

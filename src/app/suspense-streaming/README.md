@@ -57,3 +57,4 @@ React 18은 `<Suspense>`를 활용해 두 가지 주요 기능을 제공합니�
 ## 더 알아보기
 
 - https://nextjs.org/docs/app/api-reference/file-conventions/loading
+- https://nextjs.org/learn/dashboard-app/streaming

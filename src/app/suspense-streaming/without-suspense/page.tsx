@@ -6,7 +6,7 @@ const getData = async (delay: number) => {
 export const dynamic = 'force-dynamic';
 
 const Page = async () => {
-  const data = await getData(1000);
+  const data = await getData(3000);
 
   return (
     <div className="flex flex-col justify-center items-center h-screen gap-2">

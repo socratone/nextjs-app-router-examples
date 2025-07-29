@@ -5,6 +5,21 @@ layout에 Suspense를 사용하면 html을 한 번에 가져오는 게 아닌 st
 - `/with-suspense` 페이지에서 확인할 수 있다.
 - `/without-suspense` 페이지는 비교를 위한 페이지다.
 
+## 스트리밍 조건
+
+아래에 따르면 스트리밍의 조건은 Suspense를 사용하는 것과 같다.
+
+> There are two ways you implement streaming in Next.js:
+>
+> 1. At the page level, with the `loading.tsx` file (which creates `<Suspense>` for you).
+> 2. At the component level, with `<Suspense>` for more granular control.
+
+https://nextjs.org/learn/dashboard-app/streaming#what-is-streaming
+
+> Suspense allows you to defer rendering parts of your application until some condition is met (e.g. data is loaded). You can wrap your dynamic components in Suspense. Then, pass it a fallback component to show while the dynamic component loads.
+
+https://nextjs.org/learn/dashboard-app/streaming#streaming-a-component
+
 ## React 18의 Suspense SSR 아키텍처
 
 https://github.com/reactwg/react-18/discussions/37
@@ -57,4 +72,3 @@ React 18은 `<Suspense>`를 활용해 두 가지 주요 기능을 제공합니�
 ## 더 알아보기
 
 - https://nextjs.org/docs/app/api-reference/file-conventions/loading
-- https://nextjs.org/learn/dashboard-app/streaming

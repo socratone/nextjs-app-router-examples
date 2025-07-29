@@ -3,6 +3,8 @@ const getData = async (delay: number) => {
   return delay + 'ms 후에 반환된 데이터';
 };
 
+export const dynamic = 'force-dynamic';
+
 const Page = async () => {
   const data = await getData(1000);
 

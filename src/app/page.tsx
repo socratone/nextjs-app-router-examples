@@ -6,6 +6,7 @@ export default function Home() {
       <Link href="/unmount-toast">Unmount Toast</Link>
       <Link href="/access-with-token">Access With Token</Link>
       <Link href="/sanitize">Sanitize</Link>
+      <Link href="/suspense-streaming">Suspense Streaming</Link>
     </div>
   );
 }
